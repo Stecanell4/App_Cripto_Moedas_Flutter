@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_cripto_moedas/pages/home_page.dart';
 
 import 'moedas_page.dart';
 
@@ -13,7 +14,7 @@ class MeuAplicativo extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: MoedasPage(),
+      home: HomePage(),
     );
   }
 }
