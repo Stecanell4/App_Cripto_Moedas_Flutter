@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_cripto_moedas/moedas_page.dart';
+import 'package:projeto_cripto_moedas/pages/carteira_page.dart';
+import 'package:projeto_cripto_moedas/pages/configuracoes_page.dart';
 
 import 'favoritas_page.dart';
 
@@ -35,14 +37,20 @@ class _HomePageState extends State<HomePage> {
         children: [
           MoedasPage(),
           FavoritasPage(),
+          CarteiraPage(),
+          ConfiguracoesPage(),
         ],
         onPageChanged: setPaginaAtual,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: paginaAtual,
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet), label: 'Carteira'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Conta'),
         ],
         onTap: (pagina) {
           pc.animateToPage(pagina,

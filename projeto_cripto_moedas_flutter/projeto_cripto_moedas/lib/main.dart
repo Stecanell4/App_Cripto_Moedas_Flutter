@@ -3,6 +3,7 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:projeto_cripto_moedas/configs/app_settings.dart';
 import 'package:projeto_cripto_moedas/meuaplicativo.dart';
+import 'package:projeto_cripto_moedas/repositories/conta_repository.dart';
 import 'package:projeto_cripto_moedas/repositories/favoritas_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,9 @@ void main() async {
 
   runApp(MultiProvider(
     providers: [
+      ChangeNotifierProvider(
+        create: (context) => ContaRepository(),
+      ),
       ChangeNotifierProvider(
         create: (context) => AppSettings(),
       ),
